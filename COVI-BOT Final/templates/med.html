@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Responsive Registration Form</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_med.css') }}">
+  </head> 
+  <body target="{{ request.args.get('target', '_self') }}">
+    <div class="container">
+      <h1 class="form-title">Medications</h1>
+      <form action="#">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Name :</label>
+          </div>
+          <div class="user-input-box">
+            <label for="username"></label>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Recommendation :</label>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber"></label>
+          </div>
+          <div class="user-input-box">
+            <label for="password"></label>
+          </div>
+          <div class="user-input-box">
+            <label for="confirmPassword"></label>
+          </div>
+        </div>
+        <div class="gender-details-box">
+          <span class="gender-title">Assumption :</span>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="OKAY">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

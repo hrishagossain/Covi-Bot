@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_log.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Sign Up</title>
+
+</head>
+<body>
+   <div class="box">
+    <div class="container">
+
+        <div class="top">
+            
+            <header>Sign Up</header>
+        </div>
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+        <form action="/for_register" method="post">
+            <div class="input-field">
+                <input type="text" class="input" placeholder="Username" name="username">
+                <i class='bx bx-user'></i>
+            </div>
+    
+            <div class="input-field">
+                <input type="password" class="input" placeholder="Password" name="password" id="passwordField">
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            
+            <div class="input-field">
+                <input type="password" class="input" placeholder="Confirm Password" name="confirm" id="confirmPasswordField">
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="showpassword" onclick="showPassword('passwordField', 'confirmPasswordField')">
+                <label for="showpassword" style="color:white">Show Password</label>
+            </div>
+
+            <div class="input-field">
+                <input type="submit" class="submit" value="Sign Up">
+            </div>
+        </form>
+        
+        <form action="/login_form" method="post">
+            <div class="two-col">
+                <div class="one">
+                    <label> Already have an account ? </label>
+                </div>
+                <div class="two">
+                    <input type="submit" class="two" value="Log In">
+            </div>
+        </form>
+    </div>
+</div>  
+</body>
+<script>
+    function showPassword(passwordField, confirmPasswordField) {
+        let passwordElement = document.getElementById(passwordField);
+        let confirmPasswordElement = document.getElementById(confirmPasswordField);
+
+        if (passwordElement.type === "password" && confirmPasswordElement.type === "password") {
+            passwordElement.type = "text";
+            confirmPasswordElement.type = "text";
+        } else {
+            passwordElement.type = "password";
+            confirmPasswordElement.type = "password";
+        }
+    }
+</script>
+</html>

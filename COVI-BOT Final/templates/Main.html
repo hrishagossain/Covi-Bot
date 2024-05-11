@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Background Video</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/style0.css') }}">
+    </head>
+    <body>
+        <div class="banner">
+            <video autoplay loop muted plays-inline>
+                <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
+            </video>
+            
+            <div class="content">
+                <h1>Welcome to Covi-Bot</h1>
+                <div>
+                    <form method="post" action="/login_form">
+                        <button type="submit">Let's Start</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
